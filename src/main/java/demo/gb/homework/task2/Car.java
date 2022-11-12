@@ -1,11 +1,17 @@
 package demo.gb.homework.task2;
 
-abstract class Car {
-    public Engine engine;
+// Создан интерфейс Startable, чтобы работало наподобие со Stopable
+abstract class Car implements Moveable, Startable, Stopable{
+    //поле engine лучше сделать приватным
+    private Engine engine;
     private String color;
     private String name;
-    protected void start() {
+    public void start() {
         System.out.println("Car starting");
+    }
+    //метод move вынесен из Lorry и LightWeightCar в родителя, т.к. одинаково реализован
+    public void move(){
+        System.out.println("Car is moving");
     }
     abstract void open();
     public Engine getEngine() {
