@@ -1,12 +1,12 @@
 package demo.gb.homework.task2;
 
-class LightWeightCar extends Car implements Moveable {
+//наследуется от Car, а Movable и Stopable интерфейсы реализуются в Car
+class LightWeightCar extends Car {
     @Override
     void open() {
         System.out.println("Car is open");
     }
+
     @Override
-    public void move() {
-        System.out.println("Car is moving");
-    }
+    public void stop() {}
 }
